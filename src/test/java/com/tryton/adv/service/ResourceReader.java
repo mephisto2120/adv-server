@@ -1,4 +1,4 @@
-package com.tryton.adv.importer.service;
+package com.tryton.adv.service;
 
 import org.apache.commons.io.IOUtils;
 import org.springframework.core.io.Resource;

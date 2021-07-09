@@ -1,4 +1,4 @@
-package com.tryton.adv.importer;
+package com.tryton.adv.server;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

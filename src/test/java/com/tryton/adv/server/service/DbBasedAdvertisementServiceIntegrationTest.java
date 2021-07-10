@@ -29,7 +29,7 @@ class DbBasedAdvertisementServiceIntegrationTest {
         long totalClicks = dbBasedAdvertisementService.geTotalClicks(DATA_SOURCE, START_DATE, endDateOptional);
 
         //then
-        assertThat(totalClicks).isEqualTo(583);
+        assertThat(totalClicks).isEqualTo(106);
     }
 
     @Test
@@ -50,6 +50,6 @@ class DbBasedAdvertisementServiceIntegrationTest {
         long impressions = dbBasedAdvertisementService.getImpressions(START_DATE);
 
         //then
-        assertThat(impressions).isEqualTo(60193);
+        assertThat(impressions).isEqualTo(63639);
     }
 }

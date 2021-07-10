@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tryton.adv.server.dataprovider.impl.AdvertisementMapper">
+
+    <select id="getImpressions" parameterType="java.util.Date" resultType="java.lang.Long">
+        SELECT coalesce(sum(met_impressions), 0)
+        FROM adv_db.metrics
+        WHERE met_daily = #{daily}
+    </select>
+
+    <select id="getClickThroughRate" resultType="java.lang.Long">
+        SELECT coalesce(sum(met_clicks) , 0)
+        FROM adv_db.metrics
+                 JOIN adv_db.campaign ON met_cpg_id = cpg_id
+                 JOIN adv_db.datasource ON ds_id = cpg_ds_id
+        WHERE cpg_name = #{campaign}
+          AND ds_name = #{dataSource}
+    </select>
+
+    <select id="geTotalClicks" resultType="java.lang.Long">
+        SELECT coalesce(sum(met_clicks) , 0)
+        FROM adv_db.metrics
+        JOIN adv_db.campaign ON met_cpg_id = cpg_id
+        JOIN adv_db.datasource ON ds_id = cpg_ds_id
+        WHERE ds_name = #{dataSource}
+        AND met_daily &gt;= #{startDate}
+        <if test="endDate!= null" >
+            AND met_daily &lt;= #{endDate}
+        </if>
+    </select>
+
+</mapper>

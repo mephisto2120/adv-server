@@ -28,21 +28,17 @@ public class AdvertisementController {
     public long geTotalClicks(@RequestParam String dataSource,
                               @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
                               @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> endDateOptional) {
-
-        return 0;
+        return advertisementService.geTotalClicks(dataSource, startDate, endDateOptional);
     }
 
     @GetMapping("/click-through-rate")
     public long getClickThroughRate(@RequestParam String dataSource,
                                     @RequestParam String campaign) {
-
-
-        return 0;
+        return advertisementService.getClickThroughRate(dataSource, campaign);
     }
 
     @GetMapping("/impressions")
     public long getImpressions(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) {
-
-        return 0;
+        return advertisementService.getImpressions(date);
     }
 }

@@ -6,12 +6,12 @@
 
     <groupId>com.tryton</groupId>
     <artifactId>adv-server</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <properties>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <java.version>11</java.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>
         <spring-boot.version>2.2.9.RELEASE</spring-boot.version>
         <spring.version>5.2.8.RELEASE</spring.version>
@@ -260,7 +260,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.2</version>
+                <version>0.8.7</version>
                 <executions>
                     <execution>
                         <goals>
